@@ -41,10 +41,7 @@
   </div>
 
   <div class="container">
-    <div class="hero video-container">
-      <video preload="none" autoplay loop muted>
-        <source src="pixel.mp4" type="video/mp4">
-      </video>
+    <div class="hero video-container" style="background-image:url('3194926.jpg');background-position:center center;background-size:cover">
       <div class="heading-container">
         <h1 class="heading">Welcome to my EPortfolio!</h1>
       </div>
@@ -52,9 +49,9 @@
     <div style="width:100%;height: 75px;display:flex;align-items:center;justify-content:center">
       <h2 class="subheading" id="about">About Me</h2>
     </div>
-    <div style="display:flex;align-items:center;justify-content:center;width:100%;height:600px">
-      <div style="display:flex;align-items:center;justify-content:center;max-width:800px">
-        <p style="color:white;line-height:2rem">Hello and welcome! My name is Noah Winkler and this is my ePortfolio. I am originally from Louisville, KY, but now reside in Cincinnati, OH. I have three younger siblings,
+    <div style="display:flex;align-items:center;justify-content:center;width:100%;">
+      <div style="display:flex;align-items:center;justify-content:center;max-width:1200px">
+        <p style="color:white;line-height:3rem;font-size:22px;padding:10px">Hello and welcome! My name is Noah Winkler and this is my ePortfolio. I am originally from Louisville, KY, but now reside in Cincinnati, OH. I have three younger siblings,
           two cats, and a saltwater fish tank which houses a variety of coral, invetabrates and fish. However more than saltwater fish, my true passion is technology. Since the 7th grade, I have been tinkering with and exploring technology. 
           I built my own PC that year, and was instantly hooked on the technological world. Ever since, my passion has only grown. Throughout high school I learned a variety of 
           programming languages such as Java, RobotC, and Python. I co-developed a street-fighter style game with some friends. I lead my schools robotics team as the sole developer while instructing younger students on the work I was doing.
@@ -254,10 +251,19 @@
     <div class="modal micromodal-slide" id="modal-0" aria-hidden="true">
       <div class="modal__overlay" tabindex="-1">
         <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-0-title">
-          <header class="modal__header">
+          <header class="modal__header" style="display: flex">
+            <a href="https://usdigitalpartners.com" target="_blank" class="header-link">
             <h2 class="modal__title" id="modal-0-title">
               US Digital Partners
             </h2>
+            <div id="svg-container0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-left:4px;margin-top:4px" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+              </svg>
+            </div>
+           </a>
+          
             <button class="modal__close" aria-label="Close modal"></button>
           </header>
           <main class="modal__content" id="modal-0-content">
@@ -367,6 +373,10 @@
       let button3 = document.createElement('button');
       button3.classList.add('modal__btn')
       button3.innerHTML = 'Close';
+      let svgdiv = document.createElement('div');
+      svgdiv.id = `svg-container${y}`;
+      document.getElementsByClassName("header-link")[0].appendChild(svgdiv);
+      document.getElementById(`svg-container${y}`).innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-left:4px;margin-top:4px" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/></svg>';
       footer.appendChild(button2);
       // footer.appendChild(button3);
     }
@@ -374,22 +384,23 @@
   window.onload = function () {
 
     let projects = [
-      { key: 'US Digital Partners', value: 'usdp.jpg', description: 'Implemented bug fixes and performed server, php, and plugin maintenance.' },
-      { key: 'Thor', value: 'thor.jpg', description: 'Created and implemented 6 pages of complex, custom, interactive, and responsive hexagon designs on the "Our Services" page.' },
-      { key: 'The Kroger Co', value: 'kroger.png', description: 'Developed reusable custom widgets in Elementor and built over half of the site while supporting the technical needs of page builders.' },
-      { key: 'Pharmacord', value: 'pharmacord.JPG', description: 'I stepped in during an employee transition to develop the custom flyout navigation menu.' },
-      { key: 'Nelson', value: 'nelson.JPG', description: 'I was pulled into this project as part of a sprint to meet a deadline. I developed the first iteration of 4 of the main pages, including the blog, expertise, and leadership pages.' },
-      { key: 'Mount St. Marys', value: 'athenaeum.JPG', description: 'Lead a fellow developer on a site refresh including new flexible content and custom page templates.' },
-      { key: 'Monteverdi', value: 'monteverdi.JPG', description: 'Reworked issues with previously developed features, redeveloped Experiences, Accomodations, and home pages.' },
-      { key: 'Margaret Mary Health', value: 'mmh.JPG', description: 'Reworked blog to work with several custom post types.' },
-      { key: 'HCSO', value: 'hcso.JPG', description: 'Created the navigation menu.' },
-      { key: 'Gorilla Glue', value: 'gorilla.JPG', description: 'Implemented variety of ADA compliances changes across the site.' },
-      { key: 'Glenmary', value: 'glenmary.JPG', description: 'Created the homepage carousel.' },
-      { key: 'Cincinnati Experience', value: 'cx.JPG', description: 'Developed blog page, reworked topics flow, implemented Love Cincy Tennis promotion, and migrated server to updated Ubuntu and php.' },
-      { key: 'Artworks', value: 'artworks.JPG', description: 'Created Meet The Team page and fixed underlying issues with php and Wordpress compatibility.' },
-      { key: 'Aliniti', value: 'aliniti.JPG', description: 'Migrated blog from Hubspot to Wordpress which included new custom blog design.' },
-      { key: 'OnDemand', value: 'ondemand.JPG', description: 'Developed variety of custom features, instructed client on best practices and usage, launched site, and responded to malicious activity.' },
-      { key: 'Sugar N Spice', value: 'sugarnspice.JPG', description: 'Supported page builder technical needs, launched site, and trained client on best practices and usage.' },
+      { key: 'US Digital Partners', value: 'usdp.jpg', description: 'Implemented bug fixes and performed server, php, and plugin maintenance.', link: 'https://usdigitalpartners.com' },
+      { key: 'Thor', value: 'thor.jpg', description: 'Created and implemented 6 pages of complex, custom, interactive, and responsive hexagon designs on the "Our Services" page.', link: 'https://thorwealthmanagement.com' },
+      //{ key: 'The Kroger Co', value: 'kroger.png', description: 'Developed reusable custom widgets in Elementor and built over half of the site while supporting the technical needs of page builders.',  },
+      { key: 'Pharmacord', value: 'pharmacord.JPG', description: 'I stepped in during an employee transition to develop the custom flyout navigation menu.', link: 'https://pharmacord.com' },
+      { key: 'Nelson', value: 'nelson.JPG', description: 'I was pulled into this project as part of a sprint to meet a deadline. I developed the first iteration of 4 of the main pages, including the blog, expertise, and leadership pages.', link: 'https://nelsonworldwide.com'},
+      { key: 'Mount St. Marys', value: 'athenaeum.JPG', description: 'Lead a fellow developer on a site refresh including new flexible content and custom page templates.', link: 'https://athenaeum.edu' },
+      { key: 'Monteverdi', value: 'monteverdi.JPG', description: 'Reworked issues with previously developed features, redeveloped Experiences, Accomodations, and home pages.', link: 'https://monteverdituscany.com' },
+      { key: 'Margaret Mary Health', value: 'mmh.JPG', description: 'Reworked blog to work with several custom post types.', link: 'https://mmhealth.org' },
+      { key: 'HCSO', value: 'hcso.JPG', description: 'Created the navigation menu.', link: 'https://hsco.org' },
+      { key: 'Gorilla Glue', value: 'gorilla.JPG', description: 'Implemented variety of ADA compliances changes across the site.', link: 'https://gorillatough.com' },
+      { key: 'Glenmary', value: 'glenmary.JPG', description: 'Created the homepage carousel. Routine updates and maintenance.', link: 'https://glenmary.org' },
+      { key: 'Cincinnati Experience', value: 'cx.JPG', description: 'Developed blog page, reworked topics flow, implemented Love Cincy Tennis promotion, and migrated server to updated Ubuntu and php.', link: 'https://cincinnatiexperience.com' },
+      { key: 'Artworks', value: 'artworks.JPG', description: 'Created Meet The Team page and fixed underlying issues with php and Wordpress compatibility.', link: 'https://artworks.org' },
+      { key: 'Aliniti', value: 'aliniti.JPG', description: 'Migrated blog from Hubspot to Wordpress which included new custom blog design.', link: 'https://aliniti.com' },
+      { key: 'OnDemand', value: 'ondemand.JPG', description: 'Developed variety of custom features, instructed client on best practices and usage, launched site, and responded to malicious activity.', link: 'https://ondemandstaffing.com' },
+      { key: 'Sugar N Spice', value: 'sugarnspice.JPG', description: 'Supported page builder technical needs, launched site, and trained client on best practices and usage.', link: 'https://eatsugarnspice.com' },
+      { key: 'Kaivac', value: '', description: 'Optimized performance of legacy ecommerce and marketing site and migrated hosting.', link: 'https://kaivac.com'}
     ];
     init_modals(projects);
     let ul = document.getElementsByClassName('glide__slides')[0];
@@ -479,6 +490,17 @@
 </script>
 
 <style>
+  .header-link {
+    color: black;
+            text-decoration: unset !important;
+            height: unset !important;
+            padding-left: unset !important;
+            display: flex;
+            align-items: unset !important;
+            justify-content: unset !important;
+            height: unset !important;
+            width: unset !important
+  }
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
   * {
@@ -551,6 +573,7 @@
     padding: 30px;
     max-width: 500px;
     max-height: 100vh;
+    min-height: 15vh;
     border-radius: 4px;
     overflow-y: auto;
     box-sizing: border-box;
@@ -723,7 +746,7 @@
   .subheading {
     color: white;
     font-family: Poppins;
-    font-size: 28px;
+    font-size: 35px;
     font-weight: 400;
   }
 
